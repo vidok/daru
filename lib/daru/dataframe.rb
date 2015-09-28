@@ -498,6 +498,9 @@ module Daru
       return to_enum(:each_row) unless block_given?
 
       @index.each do |index|
+        puts "Index: #{index.inspect}"
+        puts "Row #{access_row(index).inspect}"
+        puts "   "
         yield access_row(index)
       end
 
