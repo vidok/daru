@@ -242,7 +242,8 @@ module Daru
             @vectors = try_create_index(vectors)
 
             @vectors.each_with_index do |vec,idx|
-              @data << Daru::Vector.new(source[idx], index: @index)
+              v = Daru::Vector.new(source[idx], index: @index)
+              @data << v
             end
           elsif source.all? { |s| s.is_a?(Daru::Vector) }
             hsh = {}
